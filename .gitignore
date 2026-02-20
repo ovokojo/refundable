@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+
+# Development files
+screenshot_test.py
+meeting-transcript.txt
+
+# IDE
+.vscode/
+.idea/
