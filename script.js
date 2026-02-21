@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimations();
     initMobileMenu();
     initSmoothScroll();
+    initEmailSignup();
 });
 
 /**
@@ -319,3 +320,44 @@ window.addEventListener('scroll', function() {
         navbar.style.boxShadow = 'none';
     }
 });
+
+/**
+ * Email Signup Form
+ */
+function initEmailSignup() {
+    const form = document.getElementById('hero-email-form');
+    
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = form.querySelector('input[type="email"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const email = emailInput.value.trim();
+
+        if (!email) {
+            return;
+        }
+
+        // Disable button and show loading state
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+
+        // Simulate form submission (replace with actual API call)
+        setTimeout(() => {
+            // Show success state
+            submitBtn.textContent = '✓ Submitted!';
+            submitBtn.style.background = '#10b981';
+            emailInput.value = '';
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
+        }, 1000);
+    });
+}
