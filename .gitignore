@@ -8,3 +8,17 @@ meeting-transcript.txt
 # IDE
 .vscode/
 .idea/
+
+# OpenClaw workspace files
+.openclaw/
+memory/
+AGENTS.md
+BOOTSTRAP.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+USER.md
+MEMORY.md
+BACKEND_PLAN.md
+.pi/
