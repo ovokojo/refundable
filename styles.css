@@ -395,8 +395,8 @@ h4 {
 /* Email Signup in Hero */
 .hero-email-signup {
     width: 100%;
-    max-width: 500px;
-    margin-bottom: var(--space-xl);
+    max-width: 520px;
+    margin-bottom: var(--space-2xl);
 }
 
 .email-form {
@@ -405,26 +405,29 @@ h4 {
 
 .email-input-group {
     display: flex;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    gap: 0;
+    margin-bottom: var(--space-md);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: 6px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .email-input-group input[type="email"] {
     flex: 1;
-    padding: 0.875rem 1.25rem;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
     font-family: var(--font-body);
-    border: 2px solid var(--color-slate-200);
+    border: none;
     border-radius: var(--radius-lg);
-    background: var(--color-white);
+    background: transparent;
     color: var(--color-slate-800);
     transition: var(--transition-base);
 }
 
 .email-input-group input[type="email"]:focus {
     outline: none;
-    border-color: var(--color-emerald-500);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    background: var(--color-slate-50);
 }
 
 .email-input-group input[type="email"]::placeholder {
@@ -432,15 +435,32 @@ h4 {
 }
 
 .email-input-group .btn {
-    padding: 0.875rem 1.5rem;
+    padding: 1rem 2rem;
     white-space: nowrap;
     font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius-lg);
+    background: var(--color-slate-900);
+    border: none;
+    transition: var(--transition-base);
+}
+
+.email-input-group .btn:hover {
+    background: var(--color-slate-800);
+    transform: translateY(-1px);
+}
+
+.email-input-group .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .email-note {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     color: var(--color-slate-500);
     margin: 0;
+    text-align: center;
 }
 
 .hero-ctas {
