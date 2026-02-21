@@ -463,6 +463,35 @@ h4 {
     text-align: center;
 }
 
+/* Mobile styles for email signup */
+@media (max-width: 640px) {
+    .hero-email-signup {
+        max-width: 100%;
+        padding: 0 var(--space-sm);
+    }
+
+    .email-input-group {
+        flex-direction: column;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .email-input-group input[type="email"] {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+    }
+
+    .email-input-group .btn {
+        padding: 0.875rem 1.5rem;
+        width: 100%;
+    }
+
+    .email-note {
+        font-size: 0.875rem;
+        padding: 0 var(--space-sm);
+    }
+}
+
 .hero-ctas {
     display: flex;
     flex-wrap: wrap;
