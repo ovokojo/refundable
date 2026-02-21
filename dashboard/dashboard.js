@@ -2,6 +2,13 @@
 
 // Initialize dashboard
 document.addEventListener('DOMContentLoaded', function() {
+    // Check authentication first
+    if (!isAuthenticated()) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    loadUserData();
     initializeUploadZone();
     loadDashboardData();
 });
@@ -154,6 +161,30 @@ function addActivityItem(icon, title, description, time) {
 function loadDashboardData() {
     // In production, this would fetch from API
     console.log('Dashboard data loaded');
+}
+
+// Load user data
+function loadUserData() {
+    const user = getCurrentUser();
+    if (user) {
+        // Update user avatar
+        const avatar = document.getElementById('userAvatar');
+        const name = document.getElementById('userName');
+        const email = document.getElementById('userEmail');
+        
+        if (avatar) {
+            const initials = `${user.firstName.charAt(0)}${user.lastName.charAt(0)}`;
+            avatar.textContent = initials;
+        }
+        
+        if (name) {
+            name.textContent = `${user.firstName} ${user.lastName}`;
+        }
+        
+        if (email) {
+            email.textContent = user.email;
+        }
+    }
 }
 
 // Format currency

@@ -121,6 +121,21 @@
     white-space: nowrap;
 }
 
+.logout-btn {
+    background: none;
+    border: none;
+    color: var(--color-slate-500);
+    cursor: pointer;
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+}
+
+.logout-btn:hover {
+    background: var(--color-slate-100);
+    color: var(--color-slate-700);
+}
+
 /* Main Content */
 .main-content {
     flex: 1;
