@@ -397,6 +397,7 @@ h4 {
     width: 100%;
     max-width: 520px;
     margin-bottom: var(--space-2xl);
+    margin-right: var(--space-md);
 }
 
 .email-form {
