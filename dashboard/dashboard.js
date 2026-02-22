@@ -11,7 +11,43 @@ document.addEventListener('DOMContentLoaded', function() {
     loadUserData();
     initializeUploadZone();
     loadDashboardData();
+    initializeMobileMenu();
 });
+
+// Mobile Menu
+function initializeMobileMenu() {
+    const menuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    if (!menuToggle || !sidebar) return;
+
+    // Toggle menu
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close menu on overlay click
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close menu on nav item click (mobile)
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+}
 
 // Upload Modal Functions
 function showUploadModal() {
