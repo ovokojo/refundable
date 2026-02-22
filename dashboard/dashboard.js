@@ -72,6 +72,35 @@ function initializeMobileMenu() {
             document.body.style.width = '';
         }
     });
+    
+    // Initialize expandable submenus
+    initializeSubmenus();
+}
+
+// Submenu Toggle
+function initializeSubmenus() {
+    const expandableItems = document.querySelectorAll('.nav-item-expandable');
+    
+    expandableItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const submenuId = item.getAttribute('data-submenu');
+            const submenu = document.getElementById(submenuId + '-submenu');
+            
+            if (submenu) {
+                // Close all other submenus
+                document.querySelectorAll('.submenu.expanded').forEach(openSubmenu => {
+                    if (openSubmenu !== submenu) {
+                        openSubmenu.classList.remove('expanded');
+                        openSubmenu.previousElementSibling.classList.remove('expanded');
+                    }
+                });
+                
+                // Toggle current submenu
+                submenu.classList.toggle('expanded');
+                item.classList.toggle('expanded');
+            }
+        });
+    });
 }
 
 // Upload Modal Functions
