@@ -20,11 +20,14 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 100vh;
+    top: 0;
+    left: 0;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    overscroll-behavior: contain;
 }
 
 .sidebar-header {
@@ -49,11 +52,12 @@
 }
 
 .sidebar-nav {
-    flex: 1;
+    flex: 1 1 auto;
     padding: var(--space-md);
     padding-bottom: var(--space-2xl);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    min-height: 0;
 }
 
 .nav-item {
@@ -85,8 +89,10 @@
 }
 
 .sidebar-footer {
+    flex: 0 0 auto;
     padding: var(--space-lg);
     border-top: 1px solid var(--color-slate-200);
+    background: var(--color-white);
 }
 
 .user-info {
@@ -682,14 +688,14 @@
 @media (max-width: 768px) {
     /* Sidebar becomes overlay */
     .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
         transform: translateX(-100%);
         width: 260px;
+        height: 100%;
         z-index: 1001;
         transition: transform 0.3s ease;
-        overflow-y: auto;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        max-height: 100vh;
     }
 
     .sidebar.open {
