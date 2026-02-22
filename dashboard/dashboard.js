@@ -26,7 +26,17 @@ function initializeMobileMenu() {
     menuToggle.addEventListener('click', () => {
         sidebar.classList.toggle('open');
         overlay.classList.toggle('active');
-        document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        
+        // Prevent body scroll when sidebar is open
+        if (sidebar.classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
     });
 
     // Close menu on overlay click
@@ -34,6 +44,8 @@ function initializeMobileMenu() {
         sidebar.classList.remove('open');
         overlay.classList.remove('active');
         document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
     });
 
     // Close menu on nav item click (mobile)
@@ -44,8 +56,21 @@ function initializeMobileMenu() {
                 sidebar.classList.remove('open');
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
             }
         });
+    });
+    
+    // Close sidebar on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
     });
 }
 

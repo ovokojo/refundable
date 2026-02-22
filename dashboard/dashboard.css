@@ -22,6 +22,9 @@
     position: fixed;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 .sidebar-header {
@@ -48,6 +51,9 @@
 .sidebar-nav {
     flex: 1;
     padding: var(--space-md);
+    padding-bottom: var(--space-2xl);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .nav-item {
@@ -680,6 +686,10 @@
         width: 260px;
         z-index: 1001;
         transition: transform 0.3s ease;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        max-height: 100vh;
     }
 
     .sidebar.open {
