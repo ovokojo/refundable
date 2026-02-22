@@ -27,7 +27,7 @@
                 <a href="#calculator">Calculator</a>
                 <a href="#faq">FAQ</a>
             </div>
-            <a href="#calculator" class="btn btn-primary btn-nav">Check Eligibility</a>
+            <a href="dashboard/signup.html" class="btn btn-primary btn-nav">Get Started</a>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -63,9 +63,9 @@
                     
                     <!-- Email Signup Section -->
                     <div class="hero-email-signup">
-                        <form class="email-form" id="hero-email-form">
+                        <form class="email-form" id="hero-email-form" action="dashboard/signup.html">
                             <div class="email-input-group">
-                                <input type="email" placeholder="Enter your email address" required>
+                                <input type="email" name="email" placeholder="Enter your email address" required>
                                 <button type="submit" class="btn">Get Started</button>
                             </div>
                             <p class="email-note">Free eligibility check • No credit card required</p>
@@ -73,13 +73,13 @@
                     </div>
                     
                     <div class="hero-ctas">
-                        <a href="#" class="btn btn-primary btn-large">
+                        <a href="dashboard/signup.html" class="btn btn-primary btn-large">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                             </svg>
                             Connect QuickBooks
                         </a>
-                        <a href="#" class="btn btn-secondary btn-large">Upload Invoices Instead</a>
+                        <a href="dashboard/signup.html" class="btn btn-secondary btn-large">Upload Invoices Instead</a>
                     </div>
                     <p class="hero-trust">Join <strong>500+</strong> businesses recovering their import duties</p>
                 </div>
@@ -483,8 +483,10 @@
                 <h2>Ready to Claim Your Refund?</h2>
                 <p>Join hundreds of businesses recovering their import duties. No upfront cost, no risk.</p>
                 <div class="cta-form">
-                    <input type="email" placeholder="Enter your business email">
-                    <button class="btn btn-primary">Get Started Free</button>
+                    <form action="dashboard/signup.html" method="get">
+                        <input type="email" name="email" placeholder="Enter your business email">
+                        <button type="submit" class="btn btn-primary">Get Started Free</button>
+                    </form>
                 </div>
                 <p class="cta-note">
                     <svg viewBox="0 0 20 20" fill="currentColor">

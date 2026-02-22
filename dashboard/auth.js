@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeAuthForms();
     checkAuthStatus();
+    prefillEmailFromURL();
 });
 
 // Initialize forms
@@ -141,6 +142,19 @@ function checkAuthStatus() {
         const userData = JSON.parse(user);
         if (userData.isAuthenticated) {
             window.location.href = 'index.html';
+        }
+    }
+}
+
+// Prefill email from URL parameter
+function prefillEmailFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const emailParam = urlParams.get('email');
+    
+    if (emailParam) {
+        const emailInput = document.getElementById('email');
+        if (emailInput) {
+            emailInput.value = emailParam;
         }
     }
 }
